@@ -1,9 +1,9 @@
 window.onload = () => {
     var map = L.map('map', {
-        minZoom: 3,
-        maxZoom: 3,
+        minZoom: 3.85,
+        maxZoom: 3.85,
         zoomControl: false
-    }).setView([-27.833, 133.583], 3);
+    }).setView([-27.833, 133.583], 3.85);
     map.dragging.disable();
 
     var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

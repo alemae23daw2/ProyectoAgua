@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Orbitron:wght@600&family=Pixelify+Sans:wght@600&display=swap');
+
+/*---------------------------------MENU----------------------------------------------*/
+*{
+    margin: 0px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+}
+
 header{
     width: 100%;
 }
@@ -27,4 +39,28 @@ ul{
 
 .menu:hover {
     transform: scale(1.2);
+}
+
+
+/*---------------------------------AUSTRALIA.HTML----------------------------------------------*/
+
+
+.container-mapa{
+    width: 100%;
+    height: 600px;
+    display: grid;
+}
+
+#map{
+    width: 70%;
+    height: 70%;
+    justify-self: center;
+    align-self: center;
+}
+
+.container-text{
+    margin-top: 150px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
