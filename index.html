@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Vollkorn:ital,wght@1,900&display=swap"
+    rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Orbitron:wght@600&family=Pixelify+Sans:wght@600&display=swap');
         body {
             font-family: sans-serif;
             margin: 0;
@@ -15,7 +18,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Alinear hijos en el centro vertical y horizontal */
+            justify-content: center;
             background: url('fondo.jpg') center/cover;
             position: relative;
         }
@@ -55,8 +58,8 @@
         }
 
         footer {
+            margin-top: 15vh;
             z-index: 24;
-            margin-top: 80vh;
             display: flex;
             column-gap: 10ch;
             font-size: 23px;
@@ -65,20 +68,89 @@
             text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white,
              1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
         }
+
+        button{
+            font-family: 'Vollkorn', ;
+            margin-top: 65vh;
+            color: black;
+            z-index: 2;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 30px;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            border: 1px blac;
+            line-height: 3em;
+            padding: 0 5em;
+            box-shadow: 0 0 0 0 transparent;
+            transition: all 0.2s ease-in;
+            background-color: rgba(255, 255, 255, );
+            border-radius: 100px;
+
+            &:hover {
+                color: rgb(0, 0, 0);
+                box-shadow: 0 0 30px 0 transparentize(var(--col-primary), 0.5);
+                background-color: rgb(0, 132, 255);;
+                transition: all 0.2s ease-out;
+
+                &:before {
+                    animation: shine 0.5s linear;
+                }
+            }
+
+            &:active {
+                box-shadow: 0;
+                transition: box-shadow 0.2s ease-in;
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                width: 0;
+                height: 86%;
+                position: absolute;
+                top: 7%;
+                left: 0;
+                opacity: 0;
+                background: white;
+                box-shadow: 0 0 15px 3px white;
+                transform: skewX(-20deg);
+                
+            }
+        }
+
+        @keyframes shine {
+            from {
+                opacity: 0;
+                left: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                left: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="overlay"></div>
+
     <h2 class="border">Projecte Aigua</h2>
     <h2 class="wave">Projecte Aigua</h2>
-    
+
+    <a href="home.html" style="text-decoration: none;"><button>ENTRA</button></a>
     <footer>
         <p>Alex Maench</p>
         <p>Arnau Vicente</p>
         <p>Adrià Milian</p>
     </footer>
-
 </body>
 
 </html>
