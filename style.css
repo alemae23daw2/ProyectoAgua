@@ -12,13 +12,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #4070F4;
+    background:#13293D;
     margin: 0;
 }
 
-nav {
+.nav {
     border-radius: 12px;
-    background: #FFF;
+    background: #E8F1F2;
     padding: 0 15px; /* Adjusted padding */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
@@ -27,7 +27,7 @@ nav {
     top: 0;
 }
 
-.nav-content {
+.nav ul {
     display: flex;
     align-items: center;
     list-style: none;
@@ -56,55 +56,22 @@ nav {
 }
 
 .link-item.active .link-icon {
-    color: #4070F4;
+    color: #df5d5d;
 }
 
 .link-text {
     position: absolute;
-    font-size: 10px; /* Reduced font size */
+    font-size: 10px;
     font-weight: 500;
-    color: #4070F4;
+    color: #df5d5d;
     opacity: 0;
-    transform: translateY(22px); /* Adjusted transformation */
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translateY(22px);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s; /* Added a delay of 0.1s */
 }
+
 
 .link-item.active .link-text {
     opacity: 1;
 }
 
-.indicator {
-    position: absolute;
-    top: -8px; /* Adjusted position */
-    left: 37.5%; /* Centered */
-    height: 24px; /* Reduced height */
-    width: 24px; /* Reduced width */
-    background-color: #FFF;
-    border: 4px solid #4070F4; /* Adjusted border thickness */
-    border-radius: 50%;
-    transform: translateX(-50%);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
 
-.indicator::before,
-.indicator::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; /* Adjusted position */
-    height: 16px; /* Reduced height */
-    width: 13px; /* Reduced width */
-}
-
-.indicator::before {
-    left: -15px; /* Adjusted position */
-    background-color: #FFF;
-    border-top-right-radius: 15px; /* Adjusted border radius */
-    box-shadow: 1px -9px #4070F4; /* Adjusted shadow */
-}
-
-.indicator::after {
-    right: -15px; /* Adjusted position */
-    background-color: #FFF;
-    border-top-left-radius: 15px; /* Adjusted border radius */
-    box-shadow: -1px -9px #4070F4; /* Adjusted shadow */
-}
