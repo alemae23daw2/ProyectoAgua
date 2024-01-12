@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Orbitron:wght@600&family=Pixelify+Sans:wght@600&display=swap');
+
+/*---------------------------------MENU----------------------------------------------*/
+*{
+    margin: 0px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+
+.water-menu {
+    background-color: #3498db; /* Azul claro */
+    padding: 15px;
+    display: flex;
+    justify-content: center; /* Cambiado a centrar */
+    align-items: center;
+}
+
+.logo {
+    color: #fff; /* Texto blanco */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.lu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu {
+    margin: 0 10px;
+}
+
+.aa {
+    text-decoration: none;
+    color: #fff; /* Texto blanco */
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.aa:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff; /* Línea blanca */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.aa:hover {
+    color: rgb(230, 242, 153); /* Cambia a verde en hover */
+}
+
+.aa:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+
+/*---------------------------------AUSTRALIA.HTML----------------------------------------------*/
+
+
+.container-mapa{
+    width: 100%;
+    height: 600px;
+    display: grid;
+}
+
+#map{
+    width: 70%;
+    height: 70%;
+    justify-self: center;
+    align-self: center;
+}
+
+.container-text{
+    margin-top: 150px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
