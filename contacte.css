@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "ADL";
+    src: url("font/ADL.ttf");
+  }
+
+* {
+    margin: 0px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+.water-menu {
+    background-color: #3498db;
+    padding: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.lu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu {
+    margin: 0 10px;
+}
+
+.aa {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.aa:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.aa:hover {
+    color: rgb(230, 242, 153);
+}
+
+.aa:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+header {
+    padding: 46px;
+    text-align: center;
+}
+
+
+
+section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 4px solid black;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.full-width-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.half-width-div {
+    flex: 1;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 20px;
+    
+}
+.half-width-div2{
+    flex: 1;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 20px;
+    background-image: url(vaso.jpg);
+    background-size: cover;
+    
+}
+#foto{
+    width: 800px;
+}
