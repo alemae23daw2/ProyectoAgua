@@ -95,6 +95,8 @@ form {
 
 label {
     margin-bottom: 8px;
+    font-family: "ADL";
+    font-size: 25px;
 }
 
 input,
@@ -107,10 +109,11 @@ textarea {
 button {
     background-color: #3498db;
     color: #fff;
-    padding: 10px 15px;
+    padding: 17px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 25px;
 }
 
 button:hover {
