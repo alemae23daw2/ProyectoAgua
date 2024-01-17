@@ -64,7 +64,7 @@ window.onload = () => {
         var data = ev.dataTransfer.getData("img");
         ev.target.appendChild(document.getElementById(data).cloneNode(true));
         ultimaPosicio.firstElementChild.remove();
-        if (ev.target == recipiente[0]) {
+        if (ev.target == recipiente[0]){
             omplirAigua();
             girar();
         }
