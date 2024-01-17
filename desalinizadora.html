@@ -6,6 +6,8 @@
     <title>Desalinitzadores</title>
     <link rel="stylesheet" href="css.css">
     <link rel="icon" type="image/x-icon" href="/IMATGES/favicon.ico">
+    <script type="text/javascript" src="osmosisVid.js"></script>
+
 </head>
 <body>
     <nav class="water-menu">
@@ -19,5 +21,14 @@
             <li class="menu"><a class="aa" href="contacte.html">Contacte</a></li>
         </ul>
     </nav>
+    <br>
+    <h3> Que es la osmosis inversa?</h3>
+    <video id="movie" autoplay autobuffer="true" width="400px" height="300px">
+        <source src="ReverseOnmosis.mp4" type='video/mp4'>
+    </video>
+    <br>  
+      <input type="range" id="progressBar" value="0" step="1">
+      <span id="currentTime">0:00</span> / <span id="totalDuration">0:00</span><br>
+      <button id="playButton">Play/Pause</button>
 </body>
 </html>
