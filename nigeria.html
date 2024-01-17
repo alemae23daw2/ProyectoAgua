@@ -64,18 +64,28 @@
 
                         var filas = rectanguloAlto / cuadradoAlto;
                         var columnas = rectanguloAncho / cuadradoAncho;
+                        ctx.lineTo(200, 100);
+                        
                 
                         ctx.fillStyle = "#EFEFEF";
                         ctx.fillRect(0, 0, rectanguloAncho, rectanguloAlto);
-                
+                        
                         ctx.strokeStyle = "#787878";
                         for (var fila = 0; fila < filas; fila++) {
                             for (var columna = 0; columna < columnas; columna++) {
                                 var x = columna * cuadradoAncho;
                                 var y = fila * cuadradoAlto;
                                 ctx.strokeRect(x, y, cuadradoAncho, cuadradoAlto);
+                                
                             }
                         }
+                        // Agrega el código para dibujar la línea
+                        ctx.beginPath();
+                        ctx.moveTo(80,520); // Coordenadas de inicio
+                        ctx.lineTo(0,550); // Coordenadas de fin
+                        ctx.strokeStyle = "#FF0000"; // Color de la línea (rojo en este caso)
+                        ctx.stroke();
+                        ctx.closePath();
                 </script>
             </body>        
     </div>
