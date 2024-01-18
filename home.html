@@ -16,7 +16,7 @@
         #container{
             display: grid;
             height: 680px;
-            border: 1px solid black;
+            border: 0px solid black;
         }
 
         .medidor{
@@ -90,6 +90,12 @@
             left: 32%;
             top: 15%;
         }
+        #agua{
+            width: 100px; 
+            margin-top:160px;
+            margin-left: 86%;
+            visibility: hidden;
+        }
 
     </style>
 </head>
@@ -108,8 +114,10 @@
     <div id="container">
         <h1>Arrastra el bidó per omplir-lo i aixi reabastir el contenidor d'aigua</h1>
         <div class="medidor"></div>
-        <img id="grifo" src="Imatges/Grifo.png">
+        <img id="grifo" src="Imatges/Grifo.png" style="z-index: 1; margin-right:40px">
+        <img id="agua" src="Imatges/agua.png">
         <div class="recipiente">
+
             <img id="bidon" src="Imatges/BidonAgua.png" draggable="true">
         </div>
         <div class="llenado"></div>

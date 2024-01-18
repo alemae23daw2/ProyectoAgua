@@ -22,7 +22,6 @@ window.onload = () => {
         }
         mostrarTimer();
     }
-
     function treureAigua(){
         document.querySelector(".medidor").firstChild.remove();
     }
@@ -67,6 +66,13 @@ window.onload = () => {
         if (ev.target == recipiente[0]){
             omplirAigua();
             girar();
+        }
+        if (ev.target == llenado[0]){
+            let aguaCau = document.getElementById("agua");
+            aguaCau.style.visibility = "visible";
+            setTimeout(()=>{
+                aguaCau.style.visibility="hidden";
+            }, 1000);
         }
     }
 
