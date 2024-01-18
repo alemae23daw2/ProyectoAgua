@@ -19,14 +19,12 @@
             <li class="menu"><a class="aa" href="contacte.html">Contacte</a></li>
         </ul>
     </nav>
-
     <body>
         <div class="full-width-container">
             <div class="half-width-div">
                 <header>
                     <h1 style="font-size: 50px;">Contacta</h1>
                 </header>
-            
                 <section>
                     <form>
                         <label for="nombre">Nombre:</label>
@@ -38,16 +36,44 @@
                         <label for="mensaje">Mensaje:</label>
                         <textarea id="mensaje" name="mensaje" rows="4" required style="max-width: 95%; max-height: 100px; min-width: 500px; min-height: 50px"></textarea>
             
-                        <button type="submit">Enviar</button>
+                        <button type="submit" onclick="enviar()">Enviar</button>
                     </form>
                 </section>
             </div>
-            
             <div class="half-width-div2">
-                
             </div>
         </div>
     </body>
+    <script>
+        window.addEventListener("load", () =>{
+            let nom = document.getElementById("nombre");
+            let email = document.getElementById("email");
+            let text = document.getElementById("mensaje");
 
+            nom.addEventListener("change", () =>{
+                let a = document.getElementById("nombre").value;
+                localStorage.setItem("nombre", a);
+            });
+
+            email.addEventListener("change", () =>{
+                let a = document.getElementById("email").value;
+                localStorage.setItem("email", a);
+            });
+
+            text.addEventListener("change", () =>{
+                let a = document.getElementById("mensaje").value;
+                localStorage.setItem("missatge", a);
+            });
+
+            nom.value=localStorage.getItem("nombre");
+            email.value=localStorage.getItem("email");
+            text.value=localStorage.getItem("missatge");
+        });
+
+        function enviar(){
+            localStorage.removeItem("missatge");
+        }
+
+    </script>
 </body>
 </html>
