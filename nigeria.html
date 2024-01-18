@@ -63,6 +63,7 @@
                         var columnas = rectanguloAncho / cuadradoAncho;
                         ctx.lineTo(200, 100);
                         
+
                 
                         ctx.fillStyle = "#EFEFEF";
                         ctx.fillRect(0, 0, rectanguloAncho, rectanguloAlto);
@@ -76,11 +77,90 @@
                                 
                             }
                         }
-                        // Agrega el código para dibujar la línea
+                        /* Aqui comença a crear la linea */
+                        ctx.lineWidth = 5;
+
                         ctx.beginPath();
-                        ctx.moveTo(80,520); // Coordenadas de inicio
-                        ctx.lineTo(0,550); // Coordenadas de fin
-                        ctx.strokeStyle = "#FF0000"; // Color de la línea (rojo en este caso)
+                        ctx.moveTo(80,462); 
+                        ctx.lineTo(0,550);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(80,462); 
+                        ctx.lineTo(160,450);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(160,450); 
+                        ctx.lineTo(240,445);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(240,445); 
+                        ctx.lineTo(320,380);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(320,380); 
+                        ctx.lineTo(400,360);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(400,360); 
+                        ctx.lineTo(480,330);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(480,330); 
+                        ctx.lineTo(560,300);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(560,300); 
+                        ctx.lineTo(640,290);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(640,290); 
+                        ctx.lineTo(720,230);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(720,230); 
+                        ctx.lineTo(800,170);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(800,170); 
+                        ctx.lineTo(880,89);
+                        ctx.strokeStyle = "#FF0000";
+                        ctx.stroke();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.moveTo(880,89); 
+                        ctx.lineTo(960,70);
+                        ctx.strokeStyle = "#FF0000";
                         ctx.stroke();
                         ctx.closePath();
                 </script>
@@ -88,7 +168,7 @@
     </div>
     <div id="pob">
         <p id="ans">1990</p>
-        <p id="ans">2993</p>
+        <p id="ans">1993</p>
         <p id="ans">1995</p>
         <p id="ans">2000</p>
         <p id="ans">2005</p>
