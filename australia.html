@@ -24,34 +24,190 @@
             <li class="menu"><a class="aa" href="contacte.html">Contacte</a></li>
         </ul>
     </nav>
+    <h1 id="aus">AUSTRALIA</h1>
+    <img id="foto" src="/Imatges/genteA.jpg">
     <div class="container-text">
         <h1>Este mapa muestra Australia</h1>
+    </div>
+    <div id="grafica">
+        <div style="display: flex;">
+            <div id="etiq">
+                <p>25.000.000</p>
+                <p>24.000.000</p>
+                <p>23.000.000</p>
+                <p>22.000.000</p>
+                <p>20.000.000</p>
+                <p>19.000.000</p>
+                <p>17.000.000</p>
+            </div>
+                <style>
+                    canvas {
+                        border: 1px solid #000;
+                        }
+                    </style>
+                </head>
+                <body>
+    
+                    <canvas id="miCanvas" width="1000" height="600"></canvas>                
+                    <script>
+                            var canvas = document.getElementById("miCanvas");
+                            var ctx = canvas.getContext("2d");
+                    
+                            var rectanguloAncho = 1000;
+                            var rectanguloAlto = 600;
+                    
+                            var cuadradoAncho = 80;
+                            var cuadradoAlto = 80;
+                            
+    
+                            var filas = rectanguloAlto / cuadradoAlto;
+                            var columnas = rectanguloAncho / cuadradoAncho;
+                            ctx.lineTo(200, 100);
+                            
+    
+                    
+                            ctx.fillStyle = "#E8F1F2";
+                            ctx.fillRect(0, 0, rectanguloAncho, rectanguloAlto);
+                            
+                            ctx.strokeStyle = "#787878";
+                            for (var fila = 0; fila < filas; fila++) {
+                                for (var columna = 0; columna < columnas; columna++) {
+                                    var x = columna * cuadradoAncho;
+                                    var y = fila * cuadradoAlto;
+                                    ctx.strokeRect(x, y, cuadradoAncho, cuadradoAlto);
+                                    
+                                }
+                            }
+                            /* Aqui comença a crear la linea */
+                            ctx.lineWidth = 5;
+    
+                            ctx.beginPath();
+                            ctx.moveTo(80,462); 
+                            ctx.lineTo(0,550);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(80,462); 
+                            ctx.lineTo(160,450);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(160,450); 
+                            ctx.lineTo(240,445);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(240,445); 
+                            ctx.lineTo(320,380);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(320,380); 
+                            ctx.lineTo(400,360);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(400,360); 
+                            ctx.lineTo(480,330);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(480,330); 
+                            ctx.lineTo(560,300);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(560,300); 
+                            ctx.lineTo(640,290);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(640,290); 
+                            ctx.lineTo(720,230);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(720,230); 
+                            ctx.lineTo(800,170);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(800,170); 
+                            ctx.lineTo(880,89);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(880,89); 
+                            ctx.lineTo(960,70);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+                    </script>
+                </body>        
+        </div>
+        <div id="pob">
+            <p id="ans">1990</p>
+            <p id="ans">1993</p>
+            <p id="ans">1995</p>
+            <p id="ans">2000</p>
+            <p id="ans">2005</p>
+            <p id="ans">2007</p>
+            <p id="ans">2010</p>
+            <p id="ans">2012</p>
+            <p id="ans">2015</p>
+            <p id="ans">2018</p>
+            <p id="ans">2020</p>
+            <p id="ans">2021</p>
+     
+        </div>
     </div>
     <div class="container-mapa">
         <div id="map"></div>
     </div>
     <br><br>
-    <h2>Infromació</h2>
+    <h2 id="info">Infromació</h2>
     <div class="parent">
         <div class="div1">
-            <h3>Per que Australia?</h3>
-            <p>Hem pensat en escollir Austràlia, concretament la ciutat de Melbourne, perquè allà tenen una planta dessalinitzadora que ha demostrat ser efectiva en suplir la manca d'aigua a la regió. Aquest projecte ha estat considerat un èxit i serveix com un bon exemple a seguir. La planta de dessalinització de Melbourne va ser dissenyada amb mesures específiques per garantir la sostenibilitat del projecte, tenint en compte l'impacte ambiental, l'eficiència energètica i la participació de la comunitat.
+            <h3 class="tit">Per que Australia?</h3>
+            <p class="txt">Hem pensat en escollir Austràlia, concretament la ciutat de Melbourne, perquè allà tenen una planta dessalinitzadora que ha demostrat ser efectiva en suplir la manca d'aigua a la regió. Aquest projecte ha estat considerat un èxit i serveix com un bon exemple a seguir. La planta de dessalinització de Melbourne va ser dissenyada amb mesures específiques per garantir la sostenibilitat del projecte, tenint en compte l'impacte ambiental, l'eficiència energètica i la participació de la comunitat.
             </p>
         </div>
         <div class="div2">
-            <h3>La Nostra idea</h3>
-            <p>Nosaltres havíem pensat en les dessalinitzadores com a una idea factible,
+            <h3 class="tit">La Nostra idea</h3>
+            <p class="txt">Nosaltres havíem pensat en les dessalinitzadores com a una idea factible,
                 ja que poden subministrar una gran quantitat d'aigua potable y sense la dependencia d’aigua dolça,
                 així que en cas que hi haguessin sequeres es podria seguir subministrant aigua a les regions més afectades del pais.</p>
         </div>
         <div class="div3">
-            <h3>Localiització de nigeria</h3>
-            <p>Apart les costes de nigeria estan davant del golf de guinea per conseqüència tindria accés desde la ciutat 
+            <h3 class="tit">Localiització de nigeria</h3>
+            <p class="txt">Apart les costes de nigeria estan davant del golf de guinea per conseqüència tindria accés desde la ciutat 
                 de Lagos a una gran font d’aigua salada.</p>
         </div>
         <div class="div4">
-            <h3>L'aigua que prodeix la desalinizadora on va?</h3>
-            <p>La idea seria suministrar  una gran part de l’aigua a les zones del sector nord del país a que son les més afectades per a les sequeres,
+            <h3 class="tit">L'aigua que prodeix la desalinizadora on va?</h3>
+            <p class="txt">La idea seria suministrar  una gran part de l’aigua a les zones del sector nord del país a que son les més afectades per a les sequeres,
                 l’altra part per a la gent de la zona on s'ubica la dessalinitzadora.</p>
         </div>
     </div>
