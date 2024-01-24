@@ -8,95 +8,13 @@
     <link rel="icon" type="image/x-icon" href="/IMATGES/favicon.ico">
     <script src="minijuego.js"></script>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-
-        #container{
-            display: grid;
-            height: 680px;
-            border: 0px solid black;
-        }
-
-        .medidor{
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+        .perfil{
             position: absolute;
-            border: 3px solid black;
-            width: 6%;
-            height: 80%;
-            top: 8%;
-            left: 2%;
+            border: 1px solid white;
+            width: 10%;
+            right: 4%;
+            height: 50px;
         }
-
-        .recipiente{
-            position: absolute;
-            border: 1px solid black;
-            width: 7%;
-            height: 20%;
-            top: 40%;
-            left: 11%;
-        }
-
-        .llenado{
-            position: absolute;
-            border: 1px solid black;
-            width: 7%;
-            height: 20%;
-            justify-self: right;
-            top: 40%;
-            right: 8%;
-        }
-
-        #bidon{
-            width: 100%;
-            height: 100%;
-        }
-
-        .aigua{
-            border: 1px solid black;
-            background-color: lightblue;
-            height: calc(100%/12);
-        }
-
-        .timer{
-            display: grid;
-            position: absolute;
-            border: 3px solid black;
-            width: 8%;
-            height: 5%;
-            top: 90%;
-            left: 1%;
-            text-align: center;
-            align-content: center;
-            font-weight: 700;
-            font-size: 2.8rem;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        #grifo{
-            position: absolute;
-            justify-self: right;
-            scale: 0.4;
-            top: -10%;
-        }
-
-        h1{
-            position: absolute;
-            font-family: Arial, Helvetica, sans-serif;
-            width: 30ch;
-            left: 32%;
-            top: 15%;
-        }
-        #agua{
-            width: 100px; 
-            margin-top:160px;
-            margin-left: 86%;
-            visibility: hidden;
-        }
-
     </style>
 </head>
 <body>
@@ -110,9 +28,10 @@
             <li class="menu"><a class="aa" href="plan.html">Pla d'actuació</a></li>
             <li class="menu"><a class="aa" href="contacte.html">Contacte</a></li>
         </ul>
+        <div class="perfil"></div>
     </nav>
     <div id="container">
-        <h1>Arrastra el bidó per omplir-lo i aixi reabastir el contenidor d'aigua</h1>
+        <h1 class="titulin">Arrastra el bidó per omplir-lo i aixi reabastir el contenidor d'aigua</h1>
         <div class="medidor"></div>
         <img id="grifo" src="Imatges/Grifo.png" style="z-index: 1; margin-right:40px">
         <img id="agua" src="Imatges/agua.png">
