@@ -19,59 +19,6 @@
             margin-left: 20px;
         }
 
-        .videoContainer {
-            margin-top: 5%;
-            margin-left: 15%;
-            display: flex;
-        }
-
-        .vid1 {
-            grid-area: 1 / 1 / 2 / 2;
-        }
-
-        .vid2 {
-            grid-area: 2 / 1 / 3 / 2;
-        }
-
-        .vid3 {
-            grid-area: 1 / 2 / 2 / 3;
-        }
-
-        .vid4 {
-            grid-area: 2 / 2 / 3 / 3;
-        }
-
-        footer{
-            background-color: #3498DB;
-            height: 150px;
-            width: 100%;
-            margin-top: 8%;
-        }
-        
-        h3{
-            position: absolute;
-            left: 8%;
-            margin-top: 2%;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-        }
-
-        .telf{
-            position: absolute;
-            left: 6.7%;
-            margin-top: 3.8%;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-        }
-
-        .email{
-            position: absolute;
-            left: 6.7%;
-            margin-top: 5.2%;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-        }
-
     </style>
 </head>
 <p>
@@ -150,7 +97,6 @@
     ambiental, però sovint tenen costos inicials més alts. Tot i així, a llarg termini, l'ús d'energies renovables pot
     resultar més econòmic.
 </p>
-
 <div class="videoContainer">
     <iframe class="vid2" width="560" height="315" src="https://www.youtube.com/embed/mZ7bgkFgqJQ?si=VwDpwG7FOCUebuuB"
         title="YouTube video player" frameborder="0"
@@ -161,11 +107,22 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
 </div>
+
 <footer>
-    <h3>Contacte:</h3>
-    <p class="telf">746783562</p>
-    <p class="email">contacte.aigua@gmail.com</p>
+    <h3 class="titolContacte">Contacte:</h3>
+    <ul class="ulContacte">
+        <li>Telf: 746783562</li>
+        <li>Email: contacte.aigua@gmail.com</li>
+        <li>C. de la Industria 117, L'Eixample, 08025 Barcelona</li>
+    </ul>
+    <h3 class="titolSocials">Troba'ns a:</h3>
+    <div class="ulSocials">
+        <img src="Imatges/instagram.svg" width="30" height="30">
+        <img src="Imatges/facebook.svg" width="30" height="30">
+        <img src="Imatges/tiktok.svg" width="30" height="30">
+        <img src="Imatges/x.svg" width="30" height="30">
+        <img src="Imatges/youtube.svg" width="30" height="30">
+    </div>
 </footer>
 </body>
-
 </html>
