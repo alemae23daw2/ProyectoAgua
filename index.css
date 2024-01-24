@@ -12,6 +12,11 @@ body {
     background: url('fondo.jpg') center/cover;
     position: relative;
 }
+html{
+    overflow-x: hidden;
+    background-color: #E8F1F2;
+
+}
 
 .overlay {
     position: absolute;

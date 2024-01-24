@@ -8,6 +8,8 @@
 
 html{
     overflow-x: hidden;
+    background-color: #E8F1F2;
+
 }
 
 ::-webkit-scrollbar {
