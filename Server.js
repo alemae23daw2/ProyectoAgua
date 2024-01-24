@@ -54,7 +54,7 @@ const server = http.createServer((req, res) => {
 
     let cadenaConnexio = 'mongodb://127.0.0.1:27017/DataBase';
 
-    if (reqUrl.pathname == '/index.html') {
+    if (reqUrl.pathname == '/') {
         fs.readFile('index.html', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -68,7 +68,175 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    } else if (reqUrl.pathname == '/desalinizadora.html') {
+    } else if (reqUrl.pathname == '/index.css') {
+        fs.readFile('index.css', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/css; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    } else if (reqUrl.pathname == '/Imatges/fondo.jpg') {
+        fs.readFile('Imatges/fondo.jpg', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/jpg; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/scripts.js') {
+        fs.readFile('scripts.js', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/javascript; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/BidonAgua.png') {
+        fs.readFile('Imatges/BidonAgua.png', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/png; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/Grifo.png') {
+        fs.readFile('Imatges/Grifo.png', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/png; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/agua.png') {
+        fs.readFile('Imatges/agua.png', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/png; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/facebook.svg') {
+        fs.readFile('Imatges/facebook.svg', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/svg+xml; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/instagram.svg') {
+        fs.readFile('Imatges/instagram.svg', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/svg+xml; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/tiktok.svg') {
+        fs.readFile('Imatges/tiktok.svg', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/svg+xml; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/x.svg') {
+        fs.readFile('Imatges/x.svg', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/svg+xml; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/youtube.svg') {
+        fs.readFile('Imatges/youtube.svg', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/svg+xml; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/home.html') {
+        fs.readFile('home.html', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/html; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/desalinizadora.html') {
         fs.readFile('desalinizadora.html', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -96,6 +264,48 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
+    }else if (reqUrl.pathname == '/Imatges/gente.jpg') {
+        fs.readFile('Imatges/gente.jpg', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/jpg; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/nigeria.css') {
+        fs.readFile('nigeria.css', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/css; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/font/ADL.ttf') {
+        fs.readFile('font/ADL.ttf', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "font/ttf; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
     } else if (reqUrl.pathname == '/australia.html') {
         fs.readFile('australia.html', function (err, sortida) {
             if (err) {
@@ -110,14 +320,28 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    } else if (reqUrl.pathname == '/AustraliaMap.js') {
-        fs.readFile('AustraliaMap.js', function (err, sortida) {
+    } else if (reqUrl.pathname == '/australia.css') {
+        fs.readFile('australia.css', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
                 res.end('Error llegint fitxer');
             } else {
                 res.writeHead(200, {
-                    "Content-Type": "text/javascript; charset=utf-8"
+                    "Content-Type": "text/css; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/genteA.jpg') {
+        fs.readFile('Imatges/genteA.jpg', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/jpg; charset=utf-8"
                 });
                 console.log("ok");
                 res.write(sortida);
@@ -166,6 +390,34 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
+    } else if (reqUrl.pathname == '/contacte.css') {
+        fs.readFile('contacte.css', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/css; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/vaso.jpg') {
+        fs.readFile('Imatges/vaso.jpg', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/jpg; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
     } else if (reqUrl.pathname == '/css.css') {
         fs.readFile('css.css', function (err, sortida) {
             if (err) {
@@ -180,21 +432,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    } else if (reqUrl.pathname == '/IMATGES/favicon.ico') {
-        fs.readFile('IMATGES/favicon.ico', function (err, sortida) {
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Error llegint fitxer');
-            } else {
-                res.writeHead(200, {
-                    "Content-Type": "image/ico; charset=utf-8"
-                });
-                console.log("ok");
-                res.write(sortida);
-                res.end();
-            }
-        });
-    } else if (reqUrl.pathname == '/desa' && req.method == 'POST') { // POST
+    }else if (reqUrl.pathname == '/desa' && req.method == 'POST') { // POST
         MongoClient.connect(cadenaConnexio, function (err, client) {
             assert.equal(null, err);
             console.log("Connexió correcta");
