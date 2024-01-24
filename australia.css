@@ -140,7 +140,8 @@ body {
     #foto{
         display:block;
         margin:auto;
-
+        width: 1161px;
+        height: 400px;
     }
 
     #aus{
@@ -198,4 +199,15 @@ footer{
     margin-top: 4%;
     cursor: pointer;
     filter: invert(100%);
+}
+
+#mapa{
+    font-size: 40px;
+    margin-bottom:3%;
+    margin-left: 21%;
+    margin-top: 1%;
+}
+
+.miCanvas{
+    margin-left: 47px;
 }
