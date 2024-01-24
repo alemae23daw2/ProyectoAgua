@@ -1,23 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inici</title>
     <link rel="stylesheet" href="css.css">
     <link rel="icon" type="image/x-icon" href="/IMATGES/favicon.ico">
-    <script src="minijuego.js"></script>
+    <script src="scripts.js"></script>
     <style>
-        .perfil{
+        .perfil {
             position: absolute;
-            border: 1px solid white;
             width: 10%;
             right: 4%;
             height: 50px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            color: white;
         }
+
+        .perfil>h1 {
+            cursor: pointer;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .popup-inner {
+            background-color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            width: 40%;
+        }
+
+        .popup-inner h2 {
+            margin-top: 0;
+        }
+
+        .popup-inner label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .popup-inner input {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .popup-inner button[type="submit"],
+        .popup-inner button[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup-inner button[type="submit"]:hover,
+        .popup-inner button[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        .popup-inner button[type="submit"] {
+            margin-top: 20px;
+        }
+
+        .popup-inner button[type="button"] {
+            margin-top: 20px;
+            background-color: #f44336;
+        }
+
+        .popup-inner button[type="button"]:hover {
+            background-color: #da190b;
+        }
+
     </style>
 </head>
+
 <body>
+
+    <div class="popup">
+        <div class="popup-inner">
+            <h2>Login</h2>
+            <br>
+            <form action="/desa" method="POST">
+                <label>
+                    Username:
+                    <input type="text"/>
+                </label>
+                <label>
+                    Password:
+                    <input type="password"/>
+                </label>
+                <button type="submit">Login</button>
+                <button type="button">Close</button>
+            </form>
+            <br>
+            <p>Ja tens compte? <a href="">Fes Login</a></p>
+        </div>
+    </div>
+
     <nav class="water-menu">
         <ul class="lu">
             <li class="menu"><a class="aa" href="home.html">Inici</a></li>
@@ -28,15 +134,16 @@
             <li class="menu"><a class="aa" href="plan.html">Pla d'actuació</a></li>
             <li class="menu"><a class="aa" href="contacte.html">Contacte</a></li>
         </ul>
-        <div class="perfil"></div>
+        <div class="perfil">
+            <h1>Login</h1>
+        </div>
     </nav>
     <div id="container">
         <h1 class="titulin">Arrastra el bidó per omplir-lo i aixi reabastir el contenidor d'aigua</h1>
         <div class="medidor"></div>
-        <img id="grifo" src="Imatges/Grifo.png" style="z-index: 1; margin-right:40px">
+        <img id="grifo" src="Imatges/Grifo.png" style="margin-right:40px">
         <img id="agua" src="Imatges/agua.png">
         <div class="recipiente">
-
             <img id="bidon" src="Imatges/BidonAgua.png" draggable="true">
         </div>
         <div class="llenado"></div>
