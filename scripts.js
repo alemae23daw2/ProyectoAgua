@@ -12,7 +12,7 @@ window.onload = () => {
             this.listeners();
             this.mostrarTimer();
         }
-    
+
         actualitzarTimer() {
             if (this.seconds === 0) {
                 if (this.minutes > 0) {
@@ -27,15 +27,15 @@ window.onload = () => {
             }
             this.mostrarTimer();
         }
-    
+
         treureAigua() {
             document.querySelector(".medidor").firstChild.remove();
         }
-    
+
         mostrarTimer() {
             this.timer.innerHTML = `${this.minutes.toString().padStart(2, '0')}:${this.seconds.toString().padStart(2, '0')}`;
         }
-    
+
         listeners() {
             let containers = document.querySelectorAll('.recipiente, .llenado');
             containers.forEach(container => {
@@ -44,17 +44,17 @@ window.onload = () => {
                 container.addEventListener('drop', ev => this.gestionarDrop(ev), false);
             });
         }
-    
-    
+
+
         gestionarSobreDrag(ev) {
             ev.preventDefault();
         }
-    
+
         gestionarIniciDrag(ev) {
             this.lastPosition = document.getElementById("bidon").parentElement;
             ev.dataTransfer.setData("img", ev.target.id);
         }
-    
+
         gestionarDrop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("img");
@@ -68,7 +68,7 @@ window.onload = () => {
                 this.mostrarAigua();
             }
         }
-    
+
         omplirAigua() {
             let container = document.querySelector(".medidor");
             let aigua = document.createElement("div");
@@ -78,7 +78,7 @@ window.onload = () => {
                 this.minutes += 1;
             }
         }
-    
+
         girar() {
             let bidon = document.getElementById("bidon");
             bidon.style.transform = "rotate(-60deg)";
@@ -88,7 +88,7 @@ window.onload = () => {
                 bidon.parentElement.style.border = "1px solid black";
             }, 500);
         }
-    
+
         mostrarAigua() {
             let aiguaCau = document.getElementById("agua");
             aiguaCau.style.visibility = "visible";
@@ -97,20 +97,28 @@ window.onload = () => {
             }, 1000);
         }
     }
-    
+
     const game = new Minijuego();
 
     /////////////////////////////////////Mongo//////////////////////////////////////////////////
 
-    let buttons = document.querySelectorAll(".popup-inner button");
-    let popup = document.querySelector(".popup");
+    let registre = document.querySelector(".popup");
+
     let loginButton = document.querySelector(".perfil>h1");
-    loginButton.addEventListener("click", () =>{
-        popup.style.display = "block";
+    loginButton.addEventListener("click", () => {
+        registre.style.display = "block";
     });
 
-    buttons[1].addEventListener("click", () =>{
-        popup.style.display = "none";
+    let buttons = document.querySelectorAll(".popup-inner button");
+    buttons[1].addEventListener("click", () => {
+        registre.style.display = "none";
+        login.style.display = "none";
     });
-    
+
+    let firmar = document.getElementById("firmar");
+    firmar.addEventListener("click", () =>{
+        let dni = document.getElementById("dni").value;
+        localStorage.setItem("dni", dni);
+    });
+
 }
