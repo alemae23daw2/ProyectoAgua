@@ -6,9 +6,10 @@
     font-family: 'Chakra Petch', sans-serif;
 }
 
-html {
+html{
     overflow-x: hidden;
     background-color: #E8F1F2;
+
 }
 
 ::-webkit-scrollbar {
@@ -23,15 +24,15 @@ body {
 }
 
 .water-menu {
-    background-color: #3498db; /* Blau clar */
+    background-color: #3498db; 
     padding: 15px;
     display: flex;
-    justify-content: center; /* Canviat a centrar */
+    justify-content: center; 
     align-items: center;
 }
 
 .logo {
-    color: #fff; /* Text blanc */
+    color: #fff; 
     font-size: 24px;
     font-weight: bold;
 }
@@ -49,7 +50,7 @@ body {
 
 .aa {
     text-decoration: none;
-    color: #fff; /* Text blanc */
+    color: #fff; 
     font-weight: bold;
     position: relative;
     transition: color 0.3s ease;
@@ -62,68 +63,62 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #fff; /* Línia blanca */
+    background-color: #fff; 
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
 }
 
 .aa:hover {
-    color: rgb(230, 242, 153); /* Canvia a verd en hover */
+    color: rgb(230, 242, 153); 
 }
 
 .aa:hover:before {
     visibility: visible;
     transform: scaleX(1);
+    /*Tituls*/
 }
-
 h1 {
     text-align: center;
-    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    margin-top: 20px; 
     font-family: 'Chakra Petch', sans-serif;
 }
-
-/* Estils per als posters */
-.posters-container {
+.subtitul{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px; 
+    font-family: 'Chakra Petch', sans-serif;
+}
+/* galeria imatges */
+.gallery-wrapper {
     display: flex;
-    flex-wrap: wrap; /* Permet que els pòsters es desplacin a una nova línia si no hi ha prou espai */
-    justify-content: space-around;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 178px;
+    overflow: hidden;
 }
 
-.poster {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    width: 45%;
-    box-sizing: border-box;
-    margin-bottom: 20px; /* Añadido margen inferior para separar los bloques */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.gallery-scroll {
+    display: flex;
 }
 
-
-
-
-.poster:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.gallery {
+    display: flex;
+    padding: 0px 2px;
 }
 
-.poster h2 {
-    font-size: 1.5em;
-    color: #3498db;
-    text-decoration: underline;
+.item {
+    padding: 40px 2px;
 }
 
-.poster ul {
-    list-style: none;
-    padding: 0;
+.item img {
+    display: block;
+    max-width: 100%; 
+    max-height: 100%; 
+    width: auto; 
+    height: auto; 
+    margin: 0 auto; 
 }
-
-.poster li {
-    margin-bottom: 10px;
-}
-
 /* Estils per al footer */
 footer {
     background-color: #3498DB;

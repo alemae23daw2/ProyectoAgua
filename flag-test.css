@@ -1,0 +1,45 @@
+@keyframes oscillate {
+    from {
+      transform: translateY(8px);
+    }
+    to {
+      transform: translateY(-8px);
+    }
+  }
+
+  .flag-container {
+    width: 200px; 
+    margin: auto; 
+    margin-top: 50px; 
+  }
+  
+  .flag {
+    display: flex;
+    aspect-ratio: 2 / 1; 
+  }
+  
+  .column {
+    flex: 1;
+    display: flex;
+  }
+
+  .green {
+    flex: 1;
+    background-color: #008000;
+  }
+
+  .white {
+    flex: 1;
+    background-color: #ffffff;
+  }
+
+  .column div {
+    height: 100%;
+  }
+
+  .column {
+    animation: oscillate 500ms infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards;
+  }
