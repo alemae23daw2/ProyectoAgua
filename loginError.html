@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inici</title>
     <link rel="stylesheet" href="css.css">
-    <script src="scripts.js"></script>
     <style>
         
         .perfil {
@@ -25,19 +24,7 @@
         }
 
         .popup {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .popup2 {
-            display: none;
+            display: block;
             position: fixed;
             z-index: 1;
             left: 0;
@@ -127,41 +114,9 @@
 
     <div class="popup">
         <div class="popup-inner">
-            <h2>Registrar-se</h2>
+            <h1>Error de Login</h1>
             <br>
-                <label for="usuari">
-                    Usuari:
-                    <input type="text" name="usuari" id="usr1" required/>
-                </label>
-                <label for="contrasena">
-                    Contrasenya:
-                    <input type="password" name="contrasena" id="cnt1" required/>
-                </label>
-                <button id="button" class="registre">Registrar-se</button>
-                <button id="button2">Tancar</button>
-            <br>
-            <br>
-            <p>Ja tens compte? <a id="conmutar">Fes login</a></p>
-        </div>
-    </div>
-
-    <div class="popup2">
-        <div class="popup-inner">
-            <h2>Login</h2>
-            <br>
-                <label for="usuari">
-                    Usuari:
-                    <input type="text" name="usuari" id="usr2" required/>
-                </label>
-                <label for="contrasena">
-                    Contrasenya:
-                    <input type="password" name="contrasena" id="cnt2" required/>
-                </label>
-                <button id="button" class="login">Login</button>
-                <button id="button2">Tancar</button>
-            <br>
-            <br>
-            <p>Encara no tens compte? <a id="conmutar2">Registra't</a></p>
+            <button onclick="window.history.back()" id="button2">Torna enrrere</button>
         </div>
     </div>
 

@@ -103,6 +103,7 @@ window.onload = () => {
     /////////////////////////////////////Mongo//////////////////////////////////////////////////
 
     let registre = document.querySelector(".popup");
+    let login = document.querySelector(".popup2");
 
     let loginButton = document.querySelector(".perfil>h1");
     loginButton.addEventListener("click", () => {
@@ -115,10 +116,59 @@ window.onload = () => {
         login.style.display = "none";
     });
 
-    let firmar = document.getElementById("firmar");
-    firmar.addEventListener("click", () =>{
-        let dni = document.getElementById("dni").value;
-        localStorage.setItem("dni", dni);
+    buttons[3].addEventListener("click", () => {
+        registre.style.display = "none";
+        login.style.display = "none";
+    });
+
+    let conmutarLogin = document.getElementById("conmutar");
+    conmutarLogin.addEventListener("click", () => {
+        document.querySelector(".popup").style.display = "none";
+        document.querySelector(".popup2").style.display = "block";
+    });
+    let conmutarRegistre = document.getElementById("conmutar2");
+    conmutarRegistre.addEventListener("click", () => {
+        document.querySelector(".popup2").style.display = "none";
+        document.querySelector(".popup").style.display = "block";
+    });
+
+    let borrarUsr = document.querySelector(".login");
+    let ferRegistre = document.querySelector(".registre");
+
+    borrarUsr.addEventListener("click", () => {
+        let a = document.getElementById("usr2").value;
+        let b = document.getElementById("cnt2").value;
+
+        var initPropi = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: `usrAEliminar=${encodeURIComponent(a)}&newCnt=${encodeURIComponent(b)}`,
+        };
+
+        var peticio = new Request('http://localhost:8888/canvia', initPropi);
+
+        fetch(peticio);
+
+        registre.style.display = "none";
+        login.style.display = "none";
+    });
+
+    ferRegistre.addEventListener("click", () => {
+        let a = document.getElementById("usr1").value;
+        let b = document.getElementById("cnt1").value;
+
+        var initPropi = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: `usuari=${encodeURIComponent(a)}&contrasenya=${encodeURIComponent(b)}`,
+        };
+
+        var peticio = new Request('http://localhost:8888/registre', initPropi);
+
+        fetch(peticio);
+
+        registre.style.display = "none";
+        login.style.display = "none";
     });
 
 }

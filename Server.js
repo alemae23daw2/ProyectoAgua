@@ -15,17 +15,19 @@ let crud = {
         });
     },
 
-    consultarUsuarios: function (db, callback) {
-        db.collection('Users').find({}).toArray(function (err, result) {
+    consultarUsuarios: function (usuari, contrasena, db, callback) {
+        db.collection('Users').findOne({ "usuari": usuari, "contraseña": contrasena }, function (err, result) {
             if (err) {
-                console.error('Error al consultar usuarios:', err);
+                console.log('Error al consultar usuarios:', err);
+            } else {
+                console.log(result);
             }
             callback(err, result);
         });
     },
 
-    eliminarUsuarioPorNombre: function (dniUsuario, db, callback) {
-        db.collection('Users').deleteOne({ "DNI": dniUsuario }, function (err, result) {
+    eliminarUsuarioPorNombre: function (usr, db, callback) {
+        db.collection('Users').deleteOne({ "usuari": usr }, function (err, result) {
             if (err) {
                 console.error('Error al eliminar usuario:', err);
             }
@@ -99,7 +101,35 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    } else if (reqUrl.pathname == '/scripts.js') {
+    } else if (reqUrl.pathname == '/Imatges/des.png') {
+        fs.readFile('Imatges/des.png', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/png; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    } else if (reqUrl.pathname == '/Imatges/sal.png') {
+        fs.readFile('Imatges/sal.png', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/png; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/scripts.js') {
         fs.readFile('scripts.js', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -295,7 +325,49 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    } else if (reqUrl.pathname == '/font/ADL.ttf') {
+    }else if (reqUrl.pathname == '/des.css') {
+        fs.readFile('des.css', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/css; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    } else if (reqUrl.pathname == '/comparativa.css') {
+        fs.readFile('comparativa.css', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/css; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/flag-test.css') {
+        fs.readFile('flag-test.css', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/css; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/font/ADL.ttf') {
         fs.readFile('font/ADL.ttf', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -351,7 +423,35 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    } else if (reqUrl.pathname == '/comparacio.html') {
+    } else if (reqUrl.pathname == '/Imatges/1rPla.png') {
+        fs.readFile('Imatges/1rPla.png', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/png; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/Imatges/cuadrant_colors.png') {
+        fs.readFile('Imatges/cuadrant_colors.png', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "image/png; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/comparacio.html') {
         fs.readFile('comparacio.html', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -379,7 +479,36 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    } else if (reqUrl.pathname == '/contacte.html') {
+    } else if (reqUrl.pathname == '/planta.css') {
+        fs.readFile('planta.css', function (err, sortida) {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/css; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/loginError.html') {
+        fs.readFile('loginError.html', function (err, sortida) {
+            if (err) {
+                console.error('Error al leer el archivo:', err);
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Error llegint fitxer');
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "text/html; charset=utf-8"
+                });
+                console.log("ok");
+                res.write(sortida);
+                res.end();
+            }
+        });
+    }else if (reqUrl.pathname == '/contacte.html') {
         fs.readFile('contacte.html', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -435,13 +564,14 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    } else if (reqUrl.pathname == '/desa' && req.method == 'POST') { // POST
+    } else if (reqUrl.pathname == '/registre' && req.method == 'POST') { // POST
         let body = '';
 
         req.on('data', chunk => {
             body += chunk.toString();
         });
 
+        
         req.on('end', () => {
             const formData = querystring.parse(body);
             MongoClient.connect(cadenaConnexio, function (err, client) {
@@ -450,48 +580,18 @@ const server = http.createServer((req, res) => {
                 var db = client.db('DataBase');
 
                 var nuevoDocumento = {
-                    "DNI": formData.dni,
-                    "Nom": formData.nom,
-                    "Cognoms": formData.cognoms,
-                    "Edat": formData.edat,
-                    "NumTelf": formData.numtelf
+                    "usuari": formData.usuari,
+                    "contraseña": formData.contrasenya,
                 };
 
                 crud.afegirDocument(nuevoDocumento, db, function (err, result) {
-                    res.write("<h1>Gràcies per firmar!</h1>")
-                    res.writeHead(302, { 'Location': '/home.html' });
+                    res.writeHead(200, { "Location": "/home.html" });
                     res.end();
                     client.close();
                 });
             });
         });
-    } else if (reqUrl.pathname == '/consulta') {
-        MongoClient.connect(cadenaConnexio, function (err, client) {
-            assert.equal(null, err);
-            console.log("Connexió correcta");
-            
-            var db = client.db('DataBase');
-
-            crud.consultarUsuarios(db, function (err, usuarios) {
-                if (err) {
-                    res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
-                    res.write("Error al consultar usuarios");
-                    res.end();
-                } else {
-                    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-                    res.write("<h2>Persones que han firmat</h2>");
-                    res.write("<table>");
-                    res.write("<tr><th>Nom</th><th>Cognoms</th><th>Edat</th><th>NumTelf</th></tr>");
-                    usuarios.forEach(function (usuario) {
-                        res.write("<tr><td>" + usuario.Nom + "</td><td>" + usuario.Cognoms + "</td><td>" + usuario.Edat + "</td><td>" + usuario.NumTelf + "</td></tr>");
-                    });
-                    res.write("</table>");
-                    res.end();
-                }
-                client.close();
-            });
-        });
-    } else if (reqUrl.pathname == '/elimina') { // DELETE
+    } else if (reqUrl.pathname == '/esborrarCompte' && req.method == 'DELETE') { // DELETE
         let body = '';
         req.on('data', function (chunk) {
             body += chunk;
@@ -499,19 +599,19 @@ const server = http.createServer((req, res) => {
 
         req.on('end', function () {
             let parsedBody = querystring.parse(body);
-            let dniUsuario = parsedBody.dniAEliminar;
+            let usr = parsedBody.usrAEliminar;
+            let newCnt = parsedBody.newCnt;
 
             MongoClient.connect(cadenaConnexio, function (err, client) {
                 assert.equal(null, err);
                 console.log("Connexió correcta");
                 var db = client.db('DataBase');
 
-                crud.eliminarUsuarioPorNombre(dniUsuario, db, function (err, result) {
+                crud.eliminarUsuarioPorNombre(usr, newCnt, db, function (err, result) {
                     if (err) {
                         res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
                         res.end();
                     } else {
-                        res.write("<h1>T'has donat de baixa de la recollida de firmes</h1>")
                         res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
                         res.end();
                     }
@@ -519,7 +619,7 @@ const server = http.createServer((req, res) => {
                 });
             });
         });
-    } else if (reqUrl.pathname == '/actualiza') { // PUT
+    } else if (reqUrl.pathname == '/canvia' && req.method == 'PUT') { // PUT
         let body = '';
         req.on('data', function (chunk) {
             body += chunk;
