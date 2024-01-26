@@ -119,6 +119,48 @@ h1 {
     height: auto; 
     margin: 0 auto; 
 }
+/* Estils per als posters */
+.posters-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet que els pòsters es desplacin a una nova línia si no hi ha prou espai */
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.poster {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 45%;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Añadido margen inferior para separar los bloques */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+.poster:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.poster h2 {
+    font-size: 1.5em;
+    color: #3498db;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.poster ul {
+    list-style: none;
+    padding: 0;
+}
+
+.poster li {
+    margin-bottom: 10px;
+}
+
 /* Estils per al footer */
 footer {
     background-color: #3498DB;
