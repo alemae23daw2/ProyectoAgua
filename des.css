@@ -1,3 +1,14 @@
+/* TEXT */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Orbitron:wght@600&family=Pixelify+Sans:wght@600&display=swap');
+
+/*---------------------------------MENU----------------------------------------------*/
+*{
+    margin: 0px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+
+
 /*////////////footer/////////*/
 footer{
     background-color: #3498DB;
