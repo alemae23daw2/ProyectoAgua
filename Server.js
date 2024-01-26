@@ -24,8 +24,8 @@ let crud = {
         });
     },
 
-    eliminarUsuarioPorNombre: function (nombreUsuario, db, callback) {
-        db.collection('Users').deleteOne({ "nombreUsuario": nombreUsuario }, function (err, result) {
+    eliminarUsuarioPorNombre: function (dniUsuario, db, callback) {
+        db.collection('Users').deleteOne({ "DNI": dniUsuario }, function (err, result) {
             if (err) {
                 console.error('Error al eliminar usuario:', err);
             }
@@ -33,10 +33,13 @@ let crud = {
         });
     },
 
-    actualizarContrasena: function (nombreUsuario, nuevaContrasena, db, callback) {
+    actualizarContrasena: function (dniUsuario, nuevo1, nuevo2, nuevo3, nuevo4, db, callback) {
         db.collection('Users').updateOne(
-            { "nombreUsuario": nombreUsuario },
-            { $set: { "contrasena": nuevaContrasena } },
+            { "DNI": dniUsuario },
+            { $set: {"Nom": nuevo1,
+                    "Cognoms": nuevo2,
+                    "Edat": nuevo3,
+                    "NumTelf": nuevo4} },
             function (err, result) {
                 if (err) {
                     console.error('Error al actualizar contraseña:', err);
@@ -96,7 +99,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/scripts.js') {
+    } else if (reqUrl.pathname == '/scripts.js') {
         fs.readFile('scripts.js', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -110,7 +113,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/BidonAgua.png') {
+    } else if (reqUrl.pathname == '/Imatges/BidonAgua.png') {
         fs.readFile('Imatges/BidonAgua.png', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -124,7 +127,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/Grifo.png') {
+    } else if (reqUrl.pathname == '/Imatges/Grifo.png') {
         fs.readFile('Imatges/Grifo.png', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -138,7 +141,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/agua.png') {
+    } else if (reqUrl.pathname == '/Imatges/agua.png') {
         fs.readFile('Imatges/agua.png', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -152,7 +155,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/facebook.svg') {
+    } else if (reqUrl.pathname == '/Imatges/facebook.svg') {
         fs.readFile('Imatges/facebook.svg', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -166,7 +169,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/instagram.svg') {
+    } else if (reqUrl.pathname == '/Imatges/instagram.svg') {
         fs.readFile('Imatges/instagram.svg', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -180,7 +183,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/tiktok.svg') {
+    } else if (reqUrl.pathname == '/Imatges/tiktok.svg') {
         fs.readFile('Imatges/tiktok.svg', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -194,7 +197,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/x.svg') {
+    } else if (reqUrl.pathname == '/Imatges/x.svg') {
         fs.readFile('Imatges/x.svg', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -208,7 +211,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/youtube.svg') {
+    } else if (reqUrl.pathname == '/Imatges/youtube.svg') {
         fs.readFile('Imatges/youtube.svg', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -222,7 +225,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/home.html') {
+    } else if (reqUrl.pathname == '/home.html') {
         fs.readFile('home.html', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -236,7 +239,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/desalinizadora.html') {
+    } else if (reqUrl.pathname == '/desalinizadora.html') {
         fs.readFile('desalinizadora.html', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -264,7 +267,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/gente.jpg') {
+    } else if (reqUrl.pathname == '/Imatges/gente.jpg') {
         fs.readFile('Imatges/gente.jpg', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -278,7 +281,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/nigeria.css') {
+    } else if (reqUrl.pathname == '/nigeria.css') {
         fs.readFile('nigeria.css', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -292,7 +295,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/font/ADL.ttf') {
+    } else if (reqUrl.pathname == '/font/ADL.ttf') {
         fs.readFile('font/ADL.ttf', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -334,7 +337,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/genteA.jpg') {
+    } else if (reqUrl.pathname == '/Imatges/genteA.jpg') {
         fs.readFile('Imatges/genteA.jpg', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -404,7 +407,7 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/Imatges/vaso.jpg') {
+    } else if (reqUrl.pathname == '/Imatges/vaso.jpg') {
         fs.readFile('Imatges/vaso.jpg', function (err, sortida) {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -432,28 +435,41 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
-    }else if (reqUrl.pathname == '/desa' && req.method == 'POST') { // POST
-        MongoClient.connect(cadenaConnexio, function (err, client) {
-            assert.equal(null, err);
-            console.log("Connexió correcta");
-            var db = client.db('DataBase');
+    } else if (reqUrl.pathname == '/desa' && req.method == 'POST') { // POST
+        let body = '';
 
-            var nuevoDocumento = {
-                "nombreUsuario": reqUrl.searchParams.get('nombreUsuario'),
-                "contrasena": reqUrl.searchParams.get('contrasena')
-            };
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
 
-            crud.afegirDocument(nuevoDocumento, db, function (err, result) {
-                res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
-                res.write("Usuario agregado correctamente");
-                res.end();
-                client.close();
+        req.on('end', () => {
+            const formData = querystring.parse(body);
+            MongoClient.connect(cadenaConnexio, function (err, client) {
+                assert.equal(null, err);
+                console.log("Connexió correcta");
+                var db = client.db('DataBase');
+
+                var nuevoDocumento = {
+                    "DNI": formData.dni,
+                    "Nom": formData.nom,
+                    "Cognoms": formData.cognoms,
+                    "Edat": formData.edat,
+                    "NumTelf": formData.numtelf
+                };
+
+                crud.afegirDocument(nuevoDocumento, db, function (err, result) {
+                    res.write("<h1>Gràcies per firmar!</h1>")
+                    res.writeHead(302, { 'Location': '/home.html' });
+                    res.end();
+                    client.close();
+                });
             });
         });
-    } else if (reqUrl.pathname == '/consulta' && req.method == 'GET') { // GET
+    } else if (reqUrl.pathname == '/consulta') {
         MongoClient.connect(cadenaConnexio, function (err, client) {
             assert.equal(null, err);
             console.log("Connexió correcta");
+            
             var db = client.db('DataBase');
 
             crud.consultarUsuarios(db, function (err, usuarios) {
@@ -463,18 +479,19 @@ const server = http.createServer((req, res) => {
                     res.end();
                 } else {
                     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-                    res.write("<h2>Usuarios</h2>");
-                    res.write("<ul>");
+                    res.write("<h2>Persones que han firmat</h2>");
+                    res.write("<table>");
+                    res.write("<tr><th>Nom</th><th>Cognoms</th><th>Edat</th><th>NumTelf</th></tr>");
                     usuarios.forEach(function (usuario) {
-                        res.write("<li>" + usuario.nombreUsuario + "</li>");
+                        res.write("<tr><td>" + usuario.Nom + "</td><td>" + usuario.Cognoms + "</td><td>" + usuario.Edat + "</td><td>" + usuario.NumTelf + "</td></tr>");
                     });
-                    res.write("</ul>");
+                    res.write("</table>");
                     res.end();
                 }
                 client.close();
             });
         });
-    }else if (reqUrl.pathname == '/elimina' && req.method === 'DELETE') { // DELETE
+    } else if (reqUrl.pathname == '/elimina') { // DELETE
         let body = '';
         req.on('data', function (chunk) {
             body += chunk;
@@ -482,28 +499,27 @@ const server = http.createServer((req, res) => {
 
         req.on('end', function () {
             let parsedBody = querystring.parse(body);
-            let nombreUsuario = parsedBody.nombreUsuarioEliminar;
+            let dniUsuario = parsedBody.dniAEliminar;
 
             MongoClient.connect(cadenaConnexio, function (err, client) {
                 assert.equal(null, err);
                 console.log("Connexió correcta");
                 var db = client.db('DataBase');
 
-                crud.eliminarUsuarioPorNombre(nombreUsuario, db, function (err, result) {
+                crud.eliminarUsuarioPorNombre(dniUsuario, db, function (err, result) {
                     if (err) {
                         res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
-                        res.write("Error al eliminar usuario");
                         res.end();
                     } else {
+                        res.write("<h1>T'has donat de baixa de la recollida de firmes</h1>")
                         res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
-                        res.write("Usuario eliminado correctamente");
                         res.end();
                     }
                     client.close();
                 });
             });
         });
-    }else if (reqUrl.pathname == '/actualiza' && req.method === 'PUT') { // PUT
+    } else if (reqUrl.pathname == '/actualiza') { // PUT
         let body = '';
         req.on('data', function (chunk) {
             body += chunk;
@@ -511,22 +527,23 @@ const server = http.createServer((req, res) => {
 
         req.on('end', function () {
             let parsedBody = querystring.parse(body);
-            let nombreUsuario = parsedBody.idUsuarioActualizar;
-            let nuevaContrasena = parsedBody.nuevaContrasena;
+            let dniUsuario = parsedBody.dniUsuarioActualizar;
+            let nuevo1 = parsedBody.newNom;
+            let nuevo2 = parsedBody.newCognoms;
+            let nuevo3 = parsedBody.newEdat;
+            let nuevo4 = parsedBody.newNumTelf;
 
             MongoClient.connect(cadenaConnexio, function (err, client) {
                 assert.equal(null, err);
                 console.log("Connexió correcta");
                 var db = client.db('DataBase');
 
-                crud.actualizarContrasena(nombreUsuario, nuevaContrasena, db, function (err, result) {
+                crud.actualizarContrasena(dniUsuario, nuevo1, nuevo2, nuevo3, nuevo4, db, function (err, result) {
                     if (err) {
                         res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
-                        res.write("Error al actualizar contraseña");
                         res.end();
                     } else {
                         res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
-                        res.write("Contraseña actualizada correctamente");
                         res.end();
                     }
                     client.close();

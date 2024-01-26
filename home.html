@@ -21,11 +21,23 @@
             color: white;
         }
 
-        .perfil>h1 {
+        .perfil > h1 {
             cursor: pointer;
         }
 
         .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .popup2 {
             display: none;
             position: fixed;
             z-index: 1;
@@ -106,22 +118,34 @@
 
     <div class="popup">
         <div class="popup-inner">
-            <h2>Login</h2>
+            <h2>Firmar petició</h2>
             <br>
             <form action="/desa" method="POST">
-                <label>
-                    Username:
-                    <input type="text"/>
+                <label for="dni">
+                    DNI:
+                    <input type="text" name="dni" id="dni"/>
                 </label>
-                <label>
-                    Password:
-                    <input type="password"/>
+                <label for="nom">
+                    Nom:
+                    <input type="text" name="nom"/>
                 </label>
-                <button type="submit">Login</button>
-                <button type="button">Close</button>
+                <label for="cognoms">
+                    Cogonoms:
+                    <input type="text" name="cognoms"/>
+                </label>
+                <label for="edat">
+                    Edat:
+                    <input type="number" name="edat"/>
+                </label>
+                <label for="numtelf">
+                    Num. Telf:
+                    <input type="number" name="numtelf"/>
+                </label>
+                <button type="submit" id="firmar">Firmar</button>
+                <button type="button">Tancar</button>
             </form>
             <br>
-            <p>Ja tens compte? <a href="">Fes Login</a></p>
+            <p>Vols veure qui ja ha firmat? <a href="/consulta">Firmants</a></p>
         </div>
     </div>
 
@@ -136,7 +160,7 @@
             <li class="menu"><a class="aa" href="contacte.html">Contacte</a></li>
         </ul>
         <div class="perfil">
-            <h1>Login</h1>
+            <h1>Firmar petició</h1>
         </div>
     </nav>
     <div id="container">
