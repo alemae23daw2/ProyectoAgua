@@ -15,17 +15,6 @@ let crud = {
         });
     },
 
-    consultarUsuarios: function (usuari, contrasena, db, callback) {
-        db.collection('Users').findOne({ "usuari": usuari, "contraseña": contrasena }, function (err, result) {
-            if (err) {
-                console.log('Error al consultar usuarios:', err);
-            } else {
-                console.log(result);
-            }
-            callback(err, result);
-        });
-    },
-
     eliminarUsuarioPorNombre: function (usr, db, callback) {
         db.collection('Users').deleteOne({ "usuari": usr }, function (err, result) {
             if (err) {
@@ -35,13 +24,10 @@ let crud = {
         });
     },
 
-    actualizarContrasena: function (dniUsuario, nuevo1, nuevo2, nuevo3, nuevo4, db, callback) {
+    actualizarContrasena: function (usr, newCnt, db, callback) {
         db.collection('Users').updateOne(
-            { "DNI": dniUsuario },
-            { $set: {"Nom": nuevo1,
-                    "Cognoms": nuevo2,
-                    "Edat": nuevo3,
-                    "NumTelf": nuevo4} },
+            { "usuari": usr },
+            { $set: {"contraseña": newCnt}},
             function (err, result) {
                 if (err) {
                     console.error('Error al actualizar contraseña:', err);
@@ -565,89 +551,98 @@ const server = http.createServer((req, res) => {
             }
         });
     } else if (reqUrl.pathname == '/registre' && req.method == 'POST') { // POST
-        let body = '';
+        MongoClient.connect(cadenaConnexio, function (err, client) {
+            assert.equal(null, err);
+            console.log("Connexió correcta");
+            var db = client.db('DataBase');
 
-        req.on('data', chunk => {
-            body += chunk.toString();
+            let usr = reqUrl.searchParams.get('usuari');
+            let contrasenya = reqUrl.searchParams.get('contraseña');
+
+            var nuevoDocumento = {
+                "usuari": usr,
+                "contraseña": contrasenya,
+            };
+
+            crud.afegirDocument(nuevoDocumento, db, function (err, result) {
+                res.writeHead(200, { "Location": "/home.html" });
+                res.end();
+                client.close();
+            });
         });
-
-        
-        req.on('end', () => {
-            const formData = querystring.parse(body);
-            MongoClient.connect(cadenaConnexio, function (err, client) {
-                assert.equal(null, err);
-                console.log("Connexió correcta");
-                var db = client.db('DataBase');
-
-                var nuevoDocumento = {
-                    "usuari": formData.usuari,
-                    "contraseña": formData.contrasenya,
-                };
-
-                crud.afegirDocument(nuevoDocumento, db, function (err, result) {
-                    res.writeHead(200, { "Location": "/home.html" });
-                    res.end();
+    }else if (reqUrl.pathname == '/login') {
+        MongoClient.connect(cadenaConnexio, function (err, client) {
+            assert.equal(null, err);
+            console.log("Connexió correcta");
+            const db = client.db('DataBase');
+            let usr = reqUrl.searchParams.get('usuari');
+            let contrasenya = reqUrl.searchParams.get('contraseña');
+    
+            db.collection('Users').findOne({ "usuari": usr, "contraseña": contrasenya }, function (err, result) {
+                assert.equal(err, null);
+    
+                if (result) {
+                    console.log("Usuari trobat. Redirigint a /home.html");
                     client.close();
-                });
+    
+                    res.writeHead(302, {
+                        'Location': '/home.html'
+                    });
+                    res.end();
+                } else {
+                    console.log("Usuari no trobat. Error");
+                    client.close();
+    
+                    res.writeHead(200, { 'Content-Type': 'text/html' });
+                    res.write('<html><head><link rel="stylesheet" type="text/css" href="css/styles.css"></head><body><h1 class="usuari-no">Error: Usuari no trobat</h1></body></html>');
+                    res.end();
+
+                }
             });
         });
     } else if (reqUrl.pathname == '/esborrarCompte' && req.method == 'DELETE') { // DELETE
-        let body = '';
-        req.on('data', function (chunk) {
-            body += chunk;
-        });
+        MongoClient.connect(cadenaConnexio, function (err, client) {
+            assert.equal(null, err);
+            console.log("Connexió correcta");
+            var db = client.db('DataBase');
 
-        req.on('end', function () {
-            let parsedBody = querystring.parse(body);
-            let usr = parsedBody.usrAEliminar;
-            let newCnt = parsedBody.newCnt;
+            let usr = reqUrl.searchParams.get('usuari');
 
-            MongoClient.connect(cadenaConnexio, function (err, client) {
-                assert.equal(null, err);
-                console.log("Connexió correcta");
-                var db = client.db('DataBase');
-
-                crud.eliminarUsuarioPorNombre(usr, newCnt, db, function (err, result) {
-                    if (err) {
-                        res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
-                        res.end();
-                    } else {
-                        res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
-                        res.end();
-                    }
+            crud.eliminarUsuarioPorNombre(usr, db, function (err, result) {
+                if (err) {
+                    res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+                    res.end();
+                } else {
+                    console.log("Usuari borrat. Redirigint a /home.html");
                     client.close();
-                });
+
+                    res.writeHead(302, {
+                        'Location': '/home.html'
+                    });
+                    res.end();
+                }
+                client.close();
             });
         });
     } else if (reqUrl.pathname == '/canvia' && req.method == 'PUT') { // PUT
-        let body = '';
-        req.on('data', function (chunk) {
-            body += chunk;
-        });
+        MongoClient.connect(cadenaConnexio, function (err, client) {
+            assert.equal(null, err);
+            console.log("Connexió correcta");
+            var db = client.db('DataBase');
 
-        req.on('end', function () {
-            let parsedBody = querystring.parse(body);
-            let dniUsuario = parsedBody.dniUsuarioActualizar;
-            let nuevo1 = parsedBody.newNom;
-            let nuevo2 = parsedBody.newCognoms;
-            let nuevo3 = parsedBody.newEdat;
-            let nuevo4 = parsedBody.newNumTelf;
+            let usr = reqUrl.searchParams.get('usuari');
+            let contrasenya = reqUrl.searchParams.get('contraseña');
 
-            MongoClient.connect(cadenaConnexio, function (err, client) {
-                assert.equal(null, err);
-                console.log("Connexió correcta");
-                var db = client.db('DataBase');
-
-                crud.actualizarContrasena(dniUsuario, nuevo1, nuevo2, nuevo3, nuevo4, db, function (err, result) {
-                    if (err) {
-                        res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
-                        res.end();
-                    } else {
-                        res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
-                        res.end();
-                    }
-                    client.close();
-                });
+            crud.actualizarContrasena(usr, contrasenya, db, function (err, result) {
+                if (err) {
+                    res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+                    res.end();
+                } else {
+                    res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+                    console.log("Contraseña actualizada");
+                    res.end();
+                }
+                client.close();
             });
         });
     }

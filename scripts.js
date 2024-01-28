@@ -104,6 +104,8 @@ window.onload = () => {
 
     let registre = document.querySelector(".popup");
     let login = document.querySelector(".popup2");
+    let perEsborrar = document.querySelector(".popup3");
+    let perCanviar = document.querySelector(".popup4");
 
     let loginButton = document.querySelector(".perfil>h1");
     loginButton.addEventListener("click", () => {
@@ -121,21 +123,43 @@ window.onload = () => {
         login.style.display = "none";
     });
 
+    buttons[5].addEventListener("click", () => {
+        registre.style.display = "none";
+        login.style.display = "none";
+    });
+
+    buttons[7].addEventListener("click", () => {
+        registre.style.display = "none";
+        login.style.display = "none";
+    });
+
     let conmutarLogin = document.getElementById("conmutar");
     conmutarLogin.addEventListener("click", () => {
-        document.querySelector(".popup").style.display = "none";
-        document.querySelector(".popup2").style.display = "block";
+        registre.style.display = "none";
+        login.style.display = "block";
     });
     let conmutarRegistre = document.getElementById("conmutar2");
     conmutarRegistre.addEventListener("click", () => {
-        document.querySelector(".popup2").style.display = "none";
-        document.querySelector(".popup").style.display = "block";
+        login.style.display = "none";
+        registre.style.display = "block";
+    });
+    let conmutarBorra = document.getElementById("conmutarEsborrar");
+    conmutarBorra.addEventListener("click", () => {
+        login.style.display = "none";
+        perEsborrar.style.display = "block";
+    });
+    let conmutarCanvia = document.getElementById("conmutarCanvia");
+    conmutarCanvia.addEventListener("click", () => {
+        login.style.display = "none";
+        perCanviar.style.display = "block";
     });
 
-    let borrarUsr = document.querySelector(".login");
+    let ferLogin = document.querySelector(".login");
     let ferRegistre = document.querySelector(".registre");
+    let esborrarCompte = document.querySelector(".esborra");
+    let canvia = document.querySelector(".canvia");
 
-    borrarUsr.addEventListener("click", () => {
+    ferLogin.addEventListener("click", () => {
         let a = document.getElementById("usr2").value;
         let b = document.getElementById("cnt2").value;
 
@@ -145,10 +169,10 @@ window.onload = () => {
             body: `usrAEliminar=${encodeURIComponent(a)}&newCnt=${encodeURIComponent(b)}`,
         };
 
-        var peticio = new Request('http://localhost:8888/canvia', initPropi);
+        var peticio = new Request(`http://localhost:8888/login?usuari=${a}&contraseña=${b}`, initPropi);
 
         fetch(peticio);
-
+        
         registre.style.display = "none";
         login.style.display = "none";
     });
@@ -160,10 +184,9 @@ window.onload = () => {
         var initPropi = {
             method: 'POST',
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            body: `usuari=${encodeURIComponent(a)}&contrasenya=${encodeURIComponent(b)}`,
         };
 
-        var peticio = new Request('http://localhost:8888/registre', initPropi);
+        var peticio = new Request(`http://localhost:8888/registre?usuari=${a}&contraseña=${b}`, initPropi);
 
         fetch(peticio);
 
@@ -171,4 +194,38 @@ window.onload = () => {
         login.style.display = "none";
     });
 
+    esborrarCompte.addEventListener("click", () => {
+        let a = document.getElementById("usr3").value;
+
+        var initPropi = {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        };
+
+        var peticio = new Request(`http://localhost:8888/esborrarCompte?usuari=${a}`, initPropi);
+
+        fetch(peticio);
+
+        registre.style.display = "none";
+        login.style.display = "none";
+        perEsborrar.style.display = "none";
+    });
+
+    canvia.addEventListener("click", () => {
+        let a = document.getElementById("usr4").value;
+        let b = document.getElementById("cnt4").value;
+
+        var initPropi = {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        };
+
+        var peticio = new Request(`http://localhost:8888/canvia?usuari=${a}&contraseña=${b}`, initPropi);
+
+        fetch(peticio);
+        
+        registre.style.display = "none";
+        login.style.display = "none";
+        perCanviar.style.display = "none";
+    });
 }
