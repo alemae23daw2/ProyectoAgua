@@ -4,19 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Australia</title>
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="australia.css">
 </head>
 <body>
-    <header>
-        <ul class="container-menu">
-            <li class="menu"><a href="index.html">Inici</a></li>
-            <li class="menu"><a href="desalinizadora.html">Desalinitzadores</a></li>
-            <li class="menu"><a href="nigeria.html">Nigeria</a></li>
-            <li class="menu-selected menu"><a href="australia.html">Australia</a></li>
-            <li class="menu"><a href="comparacio.html">Comparació</a></li>
-            <li class="menu"><a href="plan.html">Pla d'actuació</a></li>
-            <li class="menu"><a hr class="menu"ef="contacte.html">Contacte</a></li>
+    <nav class="water-menu">
+        <ul class="lu">
+            <li class="menu"><a class="aa" href="home.html">Inici</a></li>
+            <li class="menu"><a class="aa" href="desalinizadora.html">Desalinitzadores</a></li>
+            <li class="menu"><a class="aa" href="nigeria.html">Nigeria</a></li>
+            <li class="menu"><a class="aa" href="australia.html">Australia</a></li>
+            <li class="menu"><a class="aa" href="comparacio.html">Comparació</a></li>
+            <li class="menu"><a class="aa" href="plan.html">Ubicación de la Planta</a></li>
+            <li class="menu"><a class="aa" href="contacte.html">Contacte</a></li>
         </ul>
-    </header>
+    </nav>
+    <h1 id="aus">AUSTRALIA</h1>
+    <img id="foto" src="/Imatges/genteA.jpg">
+    <div class="container-text">
+        <h1 id="mapa">Mapa de la demografia de Nigeria</h1>
+    </div>
+    <div id="grafica">
+        <div style="display: flex;margin-left: 47px;">
+            <div id="etiq">
+                <p>25.000.000</p>
+                <p>24.000.000</p>
+                <p>23.000.000</p>
+                <p>22.000.000</p>
+                <p>20.000.000</p>
+                <p>19.000.000</p>
+                <p>17.000.000</p>
+            </div>
+                <style>
+                    canvas {
+                        border: 1px solid #000;
+                        }
+                    </style>
+                </head>
+                <body>
+    
+                    <canvas id="miCanvas" width="1000" height="600"></canvas>                
+                    <script>
+                            var canvas = document.getElementById("miCanvas");
+                            var ctx = canvas.getContext("2d");
+                    
+                            var rectanguloAncho = 1000;
+                            var rectanguloAlto = 600;
+                    
+                            var cuadradoAncho = 80;
+                            var cuadradoAlto = 80;
+                            
+    
+                            var filas = rectanguloAlto / cuadradoAlto;
+                            var columnas = rectanguloAncho / cuadradoAncho;
+                            ctx.lineTo(200, 100);
+                            
+    
+                    
+                            ctx.fillStyle = "#E8F1F2";
+                            ctx.fillRect(0, 0, rectanguloAncho, rectanguloAlto);
+                            
+                            ctx.strokeStyle = "#787878";
+                            for (var fila = 0; fila < filas; fila++) {
+                                for (var columna = 0; columna < columnas; columna++) {
+                                    var x = columna * cuadradoAncho;
+                                    var y = fila * cuadradoAlto;
+                                    ctx.strokeRect(x, y, cuadradoAncho, cuadradoAlto);
+                                    
+                                }
+                            }
+                            /* Aqui comença a crear la linea */
+                            ctx.lineWidth = 5;
+    
+                            ctx.beginPath();
+                            ctx.moveTo(80,462); 
+                            ctx.lineTo(0,550);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(80,462); 
+                            ctx.lineTo(160,450);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(160,450); 
+                            ctx.lineTo(240,445);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(240,445); 
+                            ctx.lineTo(320,380);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(320,380); 
+                            ctx.lineTo(400,360);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(400,360); 
+                            ctx.lineTo(480,330);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(480,330); 
+                            ctx.lineTo(560,300);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(560,300); 
+                            ctx.lineTo(640,290);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(640,290); 
+                            ctx.lineTo(720,230);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(720,230); 
+                            ctx.lineTo(800,170);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(800,170); 
+                            ctx.lineTo(880,89);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+    
+                            ctx.beginPath();
+                            ctx.moveTo(880,89); 
+                            ctx.lineTo(960,70);
+                            ctx.strokeStyle = "#FF0000";
+                            ctx.stroke();
+                            ctx.closePath();
+                    </script>
+                </body>        
+        </div>
+        <div id="pob">
+            <p id="ans">1990</p>
+            <p id="ans">1993</p>
+            <p id="ans">1995</p>
+            <p id="ans">2000</p>
+            <p id="ans">2005</p>
+            <p id="ans">2007</p>
+            <p id="ans">2010</p>
+            <p id="ans">2012</p>
+            <p id="ans">2015</p>
+            <p id="ans">2018</p>
+            <p id="ans">2020</p>
+            <p id="ans">2021</p>
+     
+        </div>
+    </div>
+    <div class="container-mapa">
+        <div id="map"></div>
+    </div>
+    <br><br>
+    <h2 id="info">Infromació</h2>
+    <div class="parent">
+        <div class="div1">
+            <h3 class="tit">Per que Australia?</h3>
+            <p class="txt">Hem pensat en escollir Austràlia, ja que també es un pais que te bastantes zones en les cuals manca aigue i atraves de les dessalinitzadores han aconsegit suplir aquesta manca d'aigua d'una manera efficient i de totes elles nosaltres ens enfoqem en la de Melbourne.
+            </p>
+        </div>
+        <div class="div2">
+            <h3 class="tit">Per que la Planta Dessalinitzadora de Melbourne?</h3>
+            <p class="txt">Nosaltres em triat la planta de dessalinització de Melbourne ja que va ser dissenyada amb mesures específiques per a garantir la sostenibilitat del projecte, tenint en compte l'impacte ambiental, l'eficiència energètica i la participació de la comunitat, factors claus que es necesitan tenir en compte per a realizar proectes d'aquesta mida per aixó considerem que són un exemple  aseguuir.</p>
+        </div>
+        <div class="div4">
+            <h3 class="tit">L'aigua que prodeix la desalinizadora on va?</h3>
+            <p class="txt">En el cas de la desalinitzadora de melbourne una part de l'aigua tractada es desplaça a la zona nort del pais en unes tuberies especials i acaban en un embassament per aqest fet també ens va interesar aquesta desalinitzadora. </p>
+        </div>
+    </div>
+
+    <footer>
+        <h3 class="titolContacte">Contacte:</h3>
+        <ul class="ulContacte">
+            <li>Telf: 746783562</li>
+            <li>Email: contacte.aigua@gmail.com</li>
+            <li>C. de la Industria 117, L'Eixample, 08025 Barcelona</li>
+        </ul>
+        <h3 class="titolSocials">Troba'ns a:</h3>
+        <div class="ulSocials">
+            <img src="Imatges/instagram.svg" width="30" height="30">
+            <img src="Imatges/facebook.svg" width="30" height="30">
+            <img src="Imatges/tiktok.svg" width="30" height="30">
+            <img src="Imatges/x.svg" width="30" height="30">
+            <img src="Imatges/youtube.svg" width="30" height="30">
+        </div>
+    </footer>
 </body>
 </html>

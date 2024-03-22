@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inici</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        
+        .perfil {
+            position: absolute;
+            width: 10%;
+            right: 4%;
+            height: 50px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .perfil > h1 {
+            cursor: pointer;
+        }
+
+        .popup {
+            display: block;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .popup-inner {
+            background-color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            width: 40%;
+        }
+
+        .popup-inner h2 {
+            margin-top: 0;
+        }
+
+        .popup-inner label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .popup-inner input {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        #button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #button2 {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #button:hover {
+            transform: translateY(-2px);
+            background-color: #45a049;
+        }
+
+        #button2:hover {
+            transform: translateY(-4px);
+            background-color: #da190b;
+        }
+
+        #conmutar, #conmutar2{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="popup">
+        <div class="popup-inner">
+            <h1>Error de Login</h1>
+            <br>
+            <button onclick="window.history.back()" id="button2">Torna enrrere</button>
+        </div>
+    </div>
+
+    <nav class="water-menu">
+        <ul class="lu">
+            <li class="menu"><a class="aa" href="home.html">Inici</a></li>
+            <li class="menu"><a class="aa" href="desalinizadora.html">Desalinitzadores</a></li>
+            <li class="menu"><a class="aa" href="nigeria.html">Nigeria</a></li>
+            <li class="menu"><a class="aa" href="australia.html">Australia</a></li>
+            <li class="menu"><a class="aa" href="comparacio.html">Comparació</a></li>
+            <li class="menu"><a class="aa" href="plan.html">Ubicación de la Planta</a></li>
+            <li class="menu"><a class="aa" href="contacte.html">Contacte</a></li>
+        </ul>
+        <div class="perfil">
+            <h1>Firmar petició</h1>
+        </div>
+    </nav>
+    <div id="container">
+        <h1 class="titulin">Arrastra el bidó per omplir-lo i aixi reabastir el contenidor d'aigua</h1>
+        <div class="medidor"></div>
+        <img id="grifo" src="Imatges/Grifo.png" style="margin-right:40px">
+        <img id="agua" src="Imatges/agua.png">
+        <div class="recipiente">
+            <img id="bidon" src="Imatges/BidonAgua.png" draggable="true">
+        </div>
+        <div class="llenado"></div>
+        <div class="timer">00:00</div>
+    </div>
+
+    <footer>
+        <h3 class="titolContacte">Contacte:</h3>
+        <ul class="ulContacte">
+            <li>Telf: 746783562</li>
+            <li>Email: contacte.aigua@gmail.com</li>
+            <li>C. de la Industria 117, L'Eixample, 08025 Barcelona</li>
+        </ul>
+        <h3 class="titolSocials">Troba'ns a:</h3>
+        <div class="ulSocials">
+            <img src="Imatges/instagram.svg" width="30" height="30">
+            <img src="Imatges/facebook.svg" width="30" height="30">
+            <img src="Imatges/tiktok.svg" width="30" height="30">
+            <img src="Imatges/x.svg" width="30" height="30">
+            <img src="Imatges/youtube.svg" width="30" height="30">
+        </div>
+    </footer>
+</body>
+</html>

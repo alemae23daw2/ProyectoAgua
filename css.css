@@ -1,30 +1,235 @@
-header{
-    width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Orbitron:wght@600&family=Pixelify+Sans:wght@600&display=swap');
+
+/*---------------------------------MENU----------------------------------------------*/
+*{
+    margin: 0px;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
-.container-menu{
-    width: 100%;
+html{
+    overflow-x: hidden;
+    background-color: #E8F1F2;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+
+.water-menu {
+    background-color: #3498db; /* Azul claro */
     padding: 15px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    max-width: 100%;
+    display: flex;
+    justify-content: center; /* Cambiado a centrar */
+    align-items: center;
 }
 
-ul{
-    display: inline-block;
-    text-align: center;
-    list-style-type: none;
+.logo {
+    color: #fff; /* Texto blanco */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.lu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 .menu {
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    padding: 15px 20px;
-    cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur683.cur), auto !important;
-    transition: transform .3s;
+    margin: 0 10px;
 }
 
-.menu:hover {
-    transform: scale(1.2);
+.aa {
+    text-decoration: none;
+    color: #fff; /* Texto blanco */
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.aa:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff; /* Línea blanca */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.aa:hover {
+    color: rgb(230, 242, 153); /* Cambia a verde en hover */
+}
+
+.aa:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+
+/*---------------------------------AUSTRALIA.HTML----------------------------------------------*/
+
+
+.container-mapa{
+    width: 100%;
+    height: 600px;
+    display: grid;
+}
+
+#map{
+    width: 70%;
+    height: 70%;
+    justify-self: center;
+    align-self: center;
+}
+
+.container-text{
+    margin-top: 150px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.videoContainer {
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+footer{
+    background-color: #3498DB;
+    height: 180px;
+    width: 100%;
+    margin-top: 8%;
+    display: grid;
+}
+
+.titolContacte{
+    position: absolute;
+    left: 8%;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.titolSocials{
+    position: absolute;
+    left: 78%;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.ulContacte{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    list-style-type: none;
+    margin-top: 4%;
+    margin-left: 5.5%;
+}
+
+.ulSocials{
+    display: flex;
+    gap: 5%;
+    position: absolute;
+    left: 78%;
+    margin-top: 4%;
+    cursor: pointer;
+    filter: invert(100%);
+}
+
+#container{
+    display: grid;
+    height: 680px;
+    border: 0px solid black;
+}
+
+.medidor{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    border: 3px solid black;
+    width: 6%;
+    height: 80%;
+    top: 8%;
+    left: 2%;
+}
+
+.recipiente{
+    position: absolute;
+    border: 1px solid black;
+    width: 7%;
+    height: 20%;
+    top: 40%;
+    left: 11%;
+}
+
+.llenado{
+    position: absolute;
+    border: 1px solid black;
+    width: 7%;
+    height: 20%;
+    justify-self: right;
+    top: 40%;
+    right: 8%;
+}
+
+#bidon{
+    width: 100%;
+    height: 100%;
+}
+
+.aigua{
+    border: 1px solid black;
+    background-color: lightblue;
+    height: calc(100%/12);
+}
+
+.timer{
+    display: grid;
+    position: absolute;
+    border: 3px solid black;
+    width: 8%;
+    height: 5%;
+    top: 90%;
+    left: 1%;
+    text-align: center;
+    align-content: center;
+    font-weight: 700;
+    font-size: 2.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#grifo{
+    position: absolute;
+    justify-self: right;
+    scale: 0.4;
+    top: -10%;
+}
+
+.titulin{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 30ch;
+    left: 32%;
+    top: 15%;
+}
+#agua{
+    width: 100px; 
+    margin-top:160px;
+    margin-left: 86%;
+    visibility: hidden;
 }
